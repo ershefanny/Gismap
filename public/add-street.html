@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Gismap - Add Street</title>
+
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/add-street.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sidebar" id="sidebar-container"></div>
+      <div class="content" style="display: flex; flex: 1;">
+        <div class="form-panel">
+          <h2 class="form-title">Add Street</h2>
+
+          <form id="streetForm">
+            <div class="form-group">
+              <label for="provinsi">Provinsi</label>
+              <select id="provinsi">
+                <option value="" disabled selected class="placeholder-option">Pilih Provinsi</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="kabupaten">Kabupaten</label>
+              <select id="kabupaten">
+                <option value="" disabled selected class="placeholder-option">Pilih Kabupaten</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="kecamatan">Kecamatan</label>
+              <select id="kecamatan">
+                <option value="" disabled selected class="placeholder-option">Pilih Kecamatan</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="desa_id">Desa</label>
+              <select id="desa_id">
+                <option value="" disabled selected class="placeholder-option">Pilih Desa</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="nama_ruas">Nama Ruas</label>
+              <input type="text" id="nama_ruas" placeholder="Nama Ruas" required />
+            </div>
+
+            <div class="form-group">
+              <label for="kode_ruas">Kode Ruas</label>
+              <input type="text" id="kode_ruas" placeholder="Auto" readonly />
+            </div>
+
+            <div class="form-group">
+              <label for="eksisting_id">Eksisting Jalan</label>
+              <select id="eksisting_id">
+                <option value="" disabled selected class="placeholder-option">Pilih Eksisting Jalan</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="kondisi_id">Kondisi Jalan</label>
+              <select id="kondisi_id">
+                <option value="" disabled selected class="placeholder-option">Pilih Kondisi Jalan</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="jenisjalan_id">Jenis Jalan</label>
+              <select id="jenisjalan_id">
+                <option value="" disabled selected class="placeholder-option">Pilih Jenis Jalan</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="panjang">Panjang (m)</label>
+              <input type="number" id="panjang" placeholder="Auto" readonly />
+            </div>
+
+            <div class="form-group">
+              <label for="lebar">Lebar (m)</label>
+              <input type="number" id="lebar" placeholder="Lebar" required />
+            </div>
+
+            <div class="form-group">
+              <label for="keterangan">Keterangan</label>
+              <textarea id="keterangan" placeholder="Keterangan"></textarea>
+            </div>
+
+            <p class="info-text">Klik di peta untuk menggambar ruas jalan.</p>
+
+            <button type="submit">Simpan</button>
+          </form>
+        </div>
+
+        <div class="draw-control" id="draw-control">
+          <button id="undo-draw" class="draw-control-btn" title="Undo">↶</button>
+          <button id="finish-draw" class="draw-control-btn" title="Finish">✔</button>
+          <button id="cancel-draw" class="draw-control-btn" title="Cancel">✖</button>
+        </div>
+
+        <div id="location-search">
+          <input type="text" id="location-input" placeholder="Search location..." />
+          <button id="search-location-btn">🔍</button>
+        </div>
+        
+        <div id="map" style="flex: 1; height: 100vh;"></div>
+          <div class="basemap-icon-container">
+            <img src="img/layer-icon.svg" alt="Basemap" class="basemap-icon" />
+            <div class="basemap-dropdown hidden">
+              <div class="basemap-option" onclick="changeMap('osm')">OpenStreetMap</div>
+              <div class="basemap-option" onclick="changeMap('satellite')">Satellite</div>
+              <div class="basemap-option" onclick="changeMap('topo')">Topographic</div>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <script src="/js/sidebar.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/js/add-street.js"></script>
+  </body>
+</html>

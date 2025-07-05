@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        
+        <title>Gismap - Region</title>
+
+        <link rel="stylesheet" href="css/home.css" />
+        <link rel="stylesheet" href="css/region.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+        <style>
+            label, select {
+            display: block;
+            margin-bottom: 10px;
+            }
+
+            .region-content {
+            padding: 20px;
+            flex: 1;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <div id="sidebar-container" class="sidebar"></div>
+
+            <div class="region-content">
+                <h1 class="title">Region</h1>
+
+                <div class="card-container">
+                    <div class="card">
+                        <h2>Total Provinsi</h2>
+                        <div class="count-box" id="count-provinsi">-</div>
+                    </div>
+
+                    <div class="card">
+                        <h2>Total Kabupaten</h2>
+                        <div class="count-box" id="count-kabupaten">-</div>
+                    </div>
+
+                    <div class="card">
+                        <h2>Total Kecamatan</h2>
+                        <div class="count-box" id="count-kecamatan">-</div>
+                    </div>
+
+                    <div class="card">
+                        <h2>Total Desa</h2>
+                        <div class="count-box" id="count-desa">-</div>
+                    </div>
+                </div>
+
+                <div class="dropdowns">
+                    <label for="provinsi">Provinsi:</label>
+                    <select id="provinsi"><option>Loading...</option></select>
+
+                    <label for="kabupaten">Kabupaten:</label>
+                    <select id="kabupaten"><option>Pilih provinsi terlebih dahulu</option></select>
+
+                    <label for="kecamatan">Kecamatan:</label>
+                    <select id="kecamatan"><option>Pilih kabupaten terlebih dahulu</option></select>
+
+                    <label for="desa">Desa:</label>
+                    <select id="desa"><option>Pilih kecamatan terlebih dahulu</option></select>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/sidebar.js"></script>
+        <script src="js/region.js"></script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Gismap - Polyline</title>
+
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/polyline.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sidebar" id="sidebar-container"></div>
+      <div class="content-area">
+        <div class="polyline-panel">
+          <h2>Polyline List</h2>
+
+          <button id="toggle-draw-polyline">+ Add Polyline</button>
+
+          <div class="polyline-list-container">
+            <ul id="polyline-list"></ul>
+
+            <div class="export-container">
+              <button id="export-button">⬇ Export Data</button>
+              <div id="export-options" class="export-options hidden">
+                <button data-format="csv">CSV</button>
+                <button data-format="excel">Excel</button>
+                <button data-format="json">JSON</button>
+              </div>
+            </div>
+
+            <div>
+              <label><input type="checkbox" id="layer-toggle" checked /> Display Polylines</label>
+            </div>
+
+            <div id="pagination-controls" class="pagination-controls"></div>
+          </div>
+        </div>
+
+        <div class="map-wrapper">
+          <div class="draw-control hidden" id="polyline-draw-control">
+            <button id="undo-polyline" class="draw-control-btn">↶ Undo</button>
+            <button id="finish-polyline" class="draw-control-btn">✔ Finish</button>
+            <button id="cancel-polyline" class="draw-control-btn">✖ Cancel</button>
+          </div>
+
+          <div id="location-search">
+            <input type="text" id="location-input" placeholder="Search location..." />
+            <button id="search-location-btn">🔍</button>
+          </div>
+          
+          <div id="map"></div>
+
+          <div class="basemap-icon-container">
+            <img src="img/layer-icon.svg" alt="Basemap" class="basemap-icon" />
+            <div class="basemap-dropdown hidden">
+              <div class="basemap-option" onclick="changeMap('osm')">OpenStreetMap</div>
+              <div class="basemap-option" onclick="changeMap('satellite')">Satellite</div>
+              <div class="basemap-option" onclick="changeMap('topo')">Topographic</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/js/sidebar.js"></script>
+    <script src="/js/polyline.js"></script>
+  </body>
+</html>

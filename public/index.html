@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+
+    <title>Gismap - Dashboard</title>
+
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  </head>
+
+  <body>
+    <div class="container">
+    <div class="sidebar" id="sidebar-container"></div>
+
+    <main>
+      <section class="dashboard-header">
+        <h1>Gismap</h1>
+        <p>Visualize. Manage. Execute. All in one place</p>
+      </section>
+
+      <section class="summary-cards">
+        <div class="card" onclick="location.href='manage-street'">
+          <h2 id="street-count">0</h2>
+          <p>Streets</p>
+        </div>
+
+        <div class="card" onclick="location.href='marker'">
+          <h2 id="marker-count">0</h2>
+          <p>Markers</p>
+        </div>
+
+        <div class="card" onclick="location.href='polyline'">
+          <h2 id="polyline-count">0</h2>
+          <p>Polylines</p>
+        </div>
+        
+        <div class="card" onclick="location.href='polygon'">
+          <h2 id="polygon-count">0</h2>
+          <p>Polygons</p>
+        </div>
+      </section>
+
+      <section class="map-section">
+        <div class="search-bar">
+          <input type="text" id="location-input" placeholder="Search location..." />
+          <button id="search-location-btn">🔍</button>
+        </div>
+        <div id="map"></div>
+            <div class="basemap-icon-container">
+              <img src="img/layer-icon.svg" alt="Basemap" class="basemap-icon" />
+              <div class="basemap-dropdown hidden">
+                <div class="basemap-option" onclick="changeMap('osm')">OpenStreetMap</div>
+                <div class="basemap-option" onclick="changeMap('satellite')">Satellite</div>
+                <div class="basemap-option" onclick="changeMap('topo')">Topographic</div>
+              </div>
+            </div>
+      </section>
+    </main>
+  </div>
+
+    <script src="js/sidebar.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/home.js"></script>
+  </body>
+</html>
